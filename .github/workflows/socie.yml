@@ -1,0 +1,36 @@
+name: Run Node.js Script from Private Repo
+
+on:
+  push:
+    branches:
+      - main  # Trigger this action on push to the public repo's main branch
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout public repo
+      uses: actions/checkout@v2  # This checks out the public repo
+
+    - name: Checkout private repo
+      uses: actions/checkout@v2
+      with:
+        repository: 'gakalender03/gGokvfd_b335S'  # URL of your private repo
+        token: ${{ secrets.GH_PRIVATE_TOKEN }}  # Use the GitHub token for private repo access
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18'  # Set your required Node.js version
+
+    - name: Install dependencies (if any)
+      run: |
+        cd gGokvfd_b335S  # Navigate to the private repo's folder
+        npm install  # Install dependencies if needed
+
+    - name: Run Node.js script from private repo
+      run: |
+        cd gGokvfd_b335S # Navigate to the private repo
+        node socie.js  # Run the script from the private repo
+        continue-on-error: true
