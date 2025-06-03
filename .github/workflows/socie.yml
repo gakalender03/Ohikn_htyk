@@ -31,6 +31,5 @@ jobs:
 
     - name: Run Node.js script from private repo
       run: |
-        cd gGokvfd_b335S # Navigate to the private repo
         node socie.js  # Run the script from the private repo
         continue-on-error: true
