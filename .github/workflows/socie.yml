@@ -16,7 +16,7 @@ jobs:
     - name: Checkout private repo
       uses: actions/checkout@v2
       with:
-        repository: 'gakalender03/gGokvfd_b335S'  # URL of your private repo
+        repository: ${{ secrets.PRIVATE_REPO_NAME }}  # URL of your private repo
         token: ${{ secrets.GH_PRIVATE_TOKEN }}  # Use the GitHub token for private repo access
 
     - name: Set up Node.js
