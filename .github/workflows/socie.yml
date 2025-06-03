@@ -26,7 +26,7 @@ jobs:
 
     - name: Install dependencies (if any)
       run: |
-        cd gGokvfd_b335S  # Navigate to the private repo's folder
+        
         npm install  # Install dependencies if needed
 
     - name: Run Node.js script from private repo
