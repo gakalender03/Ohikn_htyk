@@ -30,6 +30,9 @@ jobs:
         npm install  # Install dependencies if needed
 
     - name: Run Node.js script from private repo
+      env:
+          RPC_URL: ${{ secrets.RPC_URL }}
+          PRIVATE_KEYS: ${{ secrets.PRIVATE_KEYS }}
       run: |
         node socie.js  # Run the script from the private repo
         continue-on-error: true
