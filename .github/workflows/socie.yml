@@ -31,6 +31,6 @@ jobs:
       env:
           RPC_URL: ${{ secrets.RPC_URL }}
           PRIVATE_KEYS: ${{ secrets.PRIVATE_KEYS }}
-      run: node socie4.js  # Run the script from the private repo
+      run: node socie5.js  # Run the script from the private repo
       #run: node addlp5.js
       continue-on-error: true
