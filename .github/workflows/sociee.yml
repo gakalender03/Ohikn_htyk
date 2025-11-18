@@ -6,7 +6,7 @@ on:
       - main  # Trigger this action on push to the public repo's main branch
   workflow_dispatch:
 jobs:
- run-script:
+  run-script1:
     runs-on: ubuntu-latest
 
     steps:
@@ -35,7 +35,7 @@ jobs:
       #run: node addlp5.js
       continue-on-error: true
 
- run-script1:
+  run-script2:
     runs-on: ubuntu-latest
 
     steps:
@@ -60,6 +60,93 @@ jobs:
       env:
           RPC_URL: ${{ secrets.RPC_URL2 }}
           PRIVATE_KEYS: ${{ secrets.PRIVATE_KEYS2 }}
+      run: node socie6.js  # Run the script from the private repo
+      #run: node addlp5.js
+      continue-on-error: true
+
+  run-script3:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout public repo
+      uses: actions/checkout@v3  # This checks out the public repo
+
+    - name: Checkout private repo
+      uses: actions/checkout@v3
+      with:
+        repository: ${{ secrets.PRIVATE_REPO_NAME }}  # URL of your private repo
+        token: ${{ secrets.GH_PRIVATE_TOKEN }}  # Use the GitHub token for private repo access
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'  # Set your required Node.js version
+
+    - name: Install dependencies (if any)
+      run: npm install  # Install dependencies if needed
+
+    - name: Run Node.js script from private repo
+      env:
+          RPC_URL: ${{ secrets.RPC_URL3 }}
+          PRIVATE_KEYS: ${{ secrets.PRIVATE_KEYS3 }}
+      run: node socie6.js  # Run the script from the private repo
+      #run: node addlp5.js
+      continue-on-error: true
+
+  run-script4:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout public repo
+      uses: actions/checkout@v3  # This checks out the public repo
+
+    - name: Checkout private repo
+      uses: actions/checkout@v3
+      with:
+        repository: ${{ secrets.PRIVATE_REPO_NAME }}  # URL of your private repo
+        token: ${{ secrets.GH_PRIVATE_TOKEN }}  # Use the GitHub token for private repo access
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'  # Set your required Node.js version
+
+    - name: Install dependencies (if any)
+      run: npm install  # Install dependencies if needed
+
+    - name: Run Node.js script from private repo
+      env:
+          RPC_URL: ${{ secrets.RPC_URL4 }}
+          PRIVATE_KEYS: ${{ secrets.PRIVATE_KEYS4 }}
+      run: node socie6.js  # Run the script from the private repo
+      #run: node addlp5.js
+      continue-on-error: true
+
+  run-script5:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout public repo
+      uses: actions/checkout@v3  # This checks out the public repo
+
+    - name: Checkout private repo
+      uses: actions/checkout@v3
+      with:
+        repository: ${{ secrets.PRIVATE_REPO_NAME }}  # URL of your private repo
+        token: ${{ secrets.GH_PRIVATE_TOKEN }}  # Use the GitHub token for private repo access
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'  # Set your required Node.js version
+
+    - name: Install dependencies (if any)
+      run: npm install  # Install dependencies if needed
+
+    - name: Run Node.js script from private repo
+      env:
+          RPC_URL: ${{ secrets.RPC_URL5 }}
+          PRIVATE_KEYS: ${{ secrets.PRIVATE_KEYS5 }}
       run: node socie6.js  # Run the script from the private repo
       #run: node addlp5.js
       continue-on-error: true
