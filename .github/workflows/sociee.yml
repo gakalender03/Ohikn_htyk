@@ -31,7 +31,10 @@ jobs:
       env:
           RPC_URL: ${{ secrets.RPC_URL1 }}
           PRIVATE_KEYS: ${{ secrets.PRIVATE_KEYS1 }}
-      run: node socie6.js  # Run the script from the private repo
+      run: |
+        curl https://api.ipify.org
+        node socie6.js  
+        
       #run: node addlp5.js
       continue-on-error: true
 
@@ -60,7 +63,9 @@ jobs:
       env:
           RPC_URL: ${{ secrets.RPC_URL2 }}
           PRIVATE_KEYS: ${{ secrets.PRIVATE_KEYS2 }}
-      run: node socie6.js  # Run the script from the private repo
+      run: |
+        curl https://api.ipify.org
+        node socie6.js  
       #run: node addlp5.js
       continue-on-error: true
 
@@ -89,7 +94,9 @@ jobs:
       env:
           RPC_URL: ${{ secrets.RPC_URL3 }}
           PRIVATE_KEYS: ${{ secrets.PRIVATE_KEYS3 }}
-      run: node socie6.js  # Run the script from the private repo
+      run: |
+        curl https://api.ipify.org
+        node socie6.js  
       #run: node addlp5.js
       continue-on-error: true
 
