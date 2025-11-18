@@ -314,7 +314,7 @@ jobs:
           PRIVATE_KEYS: ${{ secrets.PRIVATE_KEYS10 }}
       run: |
         curl https://api.ipify.org
-        node socie10.js
+        node socie6.js
       #run: node addlp5.js
       continue-on-error: true
 
@@ -345,6 +345,6 @@ jobs:
           PRIVATE_KEYS: ${{ secrets.PRIVATE_KEYS11 }}
       run: |
         curl https://api.ipify.org
-        node socie10.js
+        node socie6.js
       #run: node addlp5.js
       continue-on-error: true
